@@ -34,6 +34,13 @@ public class Player : MonoBehaviour
             }
         }
 
+        if (Input.GetButton("Down"))
+        {
+            transform.localScale = new Vector3(1,0.5f,1);
+        }else{
+            transform.localScale = new Vector3(1,1,1);
+        }
+
         character.Move(direction * Time.deltaTime);
     }
 
