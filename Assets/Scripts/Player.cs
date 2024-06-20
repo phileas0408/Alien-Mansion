@@ -8,7 +8,17 @@ public class Player : MonoBehaviour
     private Vector3 direction;
 
     public float gravity = 9.81f;
-    public float jumpForce = 5f;
+    private float currentgravity = 0;
+    public float jumpForce = 6f;
+
+
+    [SerializeField]
+    private GameObject bulletprefab;
+    [SerializeField]
+    private float TimeToReload;
+    [SerializeField]
+    private Transform firePoint;
+    private float bulletReload;
 
     private void Awake() 
     {
@@ -22,17 +32,36 @@ public class Player : MonoBehaviour
 
     public void Update() 
     {
-        direction += Vector3.down * gravity * Time.deltaTime;
+
+        //more gravity if down key is pressed
+        if (Input.GetAxis("Vertical") < 0)
+        {
+            currentgravity = gravity * 2.5f;
+        } else{
+            currentgravity = gravity;
+        }
+        Debug.Log(currentgravity);
+
+
+        direction += Vector3.down * currentgravity * Time.deltaTime;
 
         if (character.isGrounded)
         {
             direction = Vector3.down;
 
-            if (Input.GetButton("Jump"))
+            if (Input.GetAxis("Vertical") > 0)
             {
                 direction = Vector3.up * jumpForce;
             }
         }
+
+
+
+        if (Input.GetAxis("Horizontal") > 0){
+            Debug.Log("shoot");
+            Shoot();
+        }
+        bulletReload -= Time.deltaTime;
 
         character.Move(direction * Time.deltaTime);
     }
@@ -41,6 +70,13 @@ public class Player : MonoBehaviour
     {
         if (other.CompareTag("Obstacle")) {
             gameManager.Instance.GameOver();
+        }
+    }
+
+    private void Shoot(){
+        if (bulletReload <= 0){
+            Instantiate(bulletprefab, firePoint.position, firePoint.rotation);
+            bulletReload = TimeToReload;
         }
     }
 }

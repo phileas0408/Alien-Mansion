@@ -69,6 +69,12 @@ public class gameManager : MonoBehaviour
         gameSpeed = 0f;
         enabled = false;
 
+        bullet[] bullets = FindObjectsOfType<bullet>();
+
+        foreach (var bullet in bullets) {
+            Destroy(bullet.gameObject);
+        }
+
         player.gameObject.SetActive(false);
         spawner.gameObject.SetActive(false);
         gameOverText.gameObject.SetActive(true);
