@@ -395,6 +395,7 @@ MonoBehaviour:
   hiscoreText: {fileID: 777133115}
   gameOverText: {fileID: 1182604776}
   retryButton: {fileID: 1494242809}
+  score: 0
 --- !u!1 &411531469
 GameObject:
   m_ObjectHideFlags: 0
@@ -797,14 +798,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objects:
-  - prefab: {fileID: 8766805020114394689, guid: 7d65cf770ab7d1770a3d62d52ea33ab6, type: 3}
-    spawnChance: 0.2
-  - prefab: {fileID: 7226285399827533679, guid: 72a13b4687f8cc1bd940bbe65e99c7d8, type: 3}
-    spawnChance: 0.19
-  - prefab: {fileID: 5723390295888712, guid: 8ab3fc1d819c6c3a3a8a0bdaf870144b, type: 3}
-    spawnChance: 0.169
-  - prefab: {fileID: 8515973785140141211, guid: ff8d39d0584b732f484066726f0eed2b, type: 3}
-    spawnChance: 0.154
+  - prefab: {fileID: 5785830087776564327, guid: 4fa06897d137da0c6a8f0a234f952815, type: 3}
+    spawnChance: 0.158
+  - prefab: {fileID: 7261057594069930325, guid: c99e95059124837e092c6f45dd37115b, type: 3}
+    spawnChance: 0.056
+  - prefab: {fileID: 6469399957236516602, guid: 5634b3aa47f309195bd3cc439308e6a8, type: 3}
+    spawnChance: 0.204
+  - prefab: {fileID: 3857948472071937245, guid: eb003b56f5fb77d1e82bfe0642ea99b5, type: 3}
+    spawnChance: 0.214
   minSpawnRate: 1
   maxSpawnRate: 2
 --- !u!4 &613018956

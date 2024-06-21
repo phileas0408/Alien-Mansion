@@ -19,8 +19,8 @@ public class gameManager : MonoBehaviour
     private Player player;
     private Spawner spawner;
 
-    private float score;
-    public float Score => score;
+    public float score;
+
 
     private void Awake() {
         if (Instance == null){

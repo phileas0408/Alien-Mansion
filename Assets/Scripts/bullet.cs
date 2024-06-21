@@ -17,6 +17,10 @@ public class bullet : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Obstacle")) {
+            if (other.gameObject.name == "cow(Clone)") {
+                Debug.Log("killed a cow");
+                gameManager.Instance.score += -50;
+            }
             Destroy(other.gameObject);
             Destroy(gameObject);
         }

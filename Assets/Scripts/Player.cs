@@ -40,7 +40,6 @@ public class Player : MonoBehaviour
         } else{
             currentgravity = gravity;
         }
-        Debug.Log(currentgravity);
 
 
         direction += Vector3.down * currentgravity * Time.deltaTime;
